@@ -1,0 +1,31 @@
+<div class="row animated fadeIn">
+
+    <div class="card-group" style="height:20rem;">
+        <div class="col-6 card" style="width: 30%;">
+            <!-- <img [src]="consola.img" /> -->
+            <p></p>
+            <img [src]="accesorio.img" style="height: 22rem;">
+        </div>
+        <div class="col-6 card" style="width: 70%;">
+            <h1 class="card-title" style="text-align: center;">{{accesorio.nombre_accesorio}}</h1>
+            <p class="card-text">Color: {{accesorio.color}}</p>
+            <p class="card-text">Memoria: {{accesorio.condicion}}</p>
+            <p class="card-text">Precio: {{ accesorio.precio}}</p>
+            <p class="card-text">Plataforma: {{ accesorio.plataforma}}</p>
+            <p class="card-text">Cantidad:
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" style="height: 27px; align-items: center;" class="quantity-left-minus btn btn-danger btn-number btn-sm mb-1" data-type="minus" (click)="Total(cantidad.value,accesorio.precio)"> - </button>
+                <input class="quantity" style="height: 27px; align-items: flex-start; padding: 8px" min="0" max="100" name="quantity" value="0" #cantidad type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" style="height: 27px; align-items: center;" class="quantity-right-plus btn btn-success btn-number btn-sm mb-1" data-type="plus" (click)="Total(cantidad.value,accesorio.precio)"> + </button>
+            </p>
+            <div *ngIf="mTotal">
+                <p class="card-text" style="height: 4rem;"><b style="font-size: 36px;">Total: {{mTotal}}</b></p>
+            </div>
+
+            <div>
+                <button (click)="Agregar(accesorio.nombre_accesorio,cantidad.value,mTotal)" class="btn btn-outline-light btn-lg" style="width: 48%; background-color:cornflowerblue">Añadir</button>
+                <button (click)="regresar()" class="btn btn-outline-light btn-lg" style="width:48%; background-color:grey">Regresar</button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark fondo">
+    <a class="navbar-brand first" href="#">PercyExpress-Games</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto second">
+            <li class="widthNav" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/inicio']" href="#">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="widthNav" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/consolas']" href="#">Consolas</a>
+            </li>
+            <li class="widthNav" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/accesorios']" href="#">Accesorios</a>
+            </li>
+            <li class="widthNav" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/juegos']" href="#">Juegos</a>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0 third">
+            <input class="form-control form-control-sm mr-sm-2 mb-0" type="search" placeholder="Busca aqui..." aria-label="Search" (keyup.enter)="buscar(busqueda.value)" #busqueda>
+            <button class="btn btn-outline-light btn-sm my-2 my-sm-0 " (click)="buscar(busqueda.value)">Buscar</button>
+        </form>
+
+    </div>
+</nav>

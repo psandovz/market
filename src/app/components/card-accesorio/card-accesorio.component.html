@@ -1,0 +1,7 @@
+<div class="card" style="height: 32rem;">
+    <img [src]="accesorio.img" class="card-img-top" [alt]="accesorio.nombre_accesorio">
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;height: 3rem;">{{ accesorio.nombre_accesorio}}</h5>
+        <p class="col text-center"><button class="btn btn-outline-light btn-lg" style="background-color:grey" (click)="llamarAccesorio(accesorio)">Seleccionar</button></p>
+    </div>
+</div>

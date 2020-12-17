@@ -1,0 +1,7 @@
+<p></p>
+<div class="card-columns">
+    <div *ngFor="let accesorio of listaAccesorios" class="animated fadeInDown">
+        <app-card-accesorio [accesorio]="accesorio" (salida)="escucharHijo($event)"></app-card-accesorio>
+
+    </div>
+</div>

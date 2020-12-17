@@ -1,0 +1,6 @@
+<p></p>
+<div class="card-columns">
+    <div *ngFor="let consola of listaConsolas" class="animated fadeInDown">
+        <app-card-consola [consola]="consola" (salida)="escucharHijo($event)"></app-card-consola>
+    </div>
+</div>

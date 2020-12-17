@@ -1,0 +1,33 @@
+<div class="row animated fadeIn">
+    <p></p>
+    <div class="card-group" style="height:20rem;">
+        <div class="col-6 card" style="width: 40%;">
+            <!-- <img [src]="consola.img" /> -->
+            <p></p>
+            <img [src]="consola.img" style="height: 250px;">
+        </div>
+        <div class="col-6 card" style="width: 60%;">
+            <h1 class="card-title" style="text-align: center;">{{consola.nombre_consola}}</h1>
+            <p class="card-text">Procesador: {{consola.procesador}}</p>
+            <p class="card-text">Memoria: {{consola.memoria}}</p>
+            <p class="card-text">Almacenamiento: {{ consola.almacenamiento}}</p>
+            <p class="card-text">Precio: {{ consola.precio}}</p>
+            <p class="card-text">Fabricante: {{ consola.fabricante}}</p>
+            <p class="card-text">Cantidad:
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" style="height: 27px; align-items: center;" class="quantity-left-minus btn btn-danger btn-number btn-sm mb-1" data-type="minus" (click)="Total(cantidad.value,consola.precio)"> - </button>
+                <input class="quantity" style="height: 27px; align-items: flex-start; padding: 8px" min="0" max="100" name="quantity" value="0" #cantidad type="number">
+                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" style="height: 27px; align-items: center;" class="quantity-right-plus btn btn-success btn-number btn-sm mb-1" data-type="plus" (click)="Total(cantidad.value,consola.precio)"> + </button>
+            </p>
+            <div *ngIf="mTotal">
+                <p class="card-text" style="height: 4rem;"><b style="font-size: 36px;">Total: {{mTotal}}</b></p>
+            </div>
+
+            <!-- <p><img width="50px" [src]="urlImg" /></p> -->
+            <!-- <button (click)="regresar()" class="btn btn-outline-light btn-lg" style="background-color:grey">Regresar</button> -->
+            <div>
+                <button (click)="Agregar(consola.nombre_consola,cantidad.value,mTotal)" class="btn btn-outline-light btn-lg" style="width: 48%; background-color:cornflowerblue">Añadir</button>
+                <button (click)="regresar()" class="btn btn-outline-light btn-lg" style="width:48%; background-color:grey">Regresar</button>
+            </div>
+        </div>
+    </div>
+</div>
